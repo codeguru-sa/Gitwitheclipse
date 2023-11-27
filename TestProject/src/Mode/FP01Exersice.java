@@ -1,6 +1,7 @@
 package Mode;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class FP01Exersice {
 	
@@ -16,7 +17,9 @@ public class FP01Exersice {
 
 	private static void printWhoseNameHasAtleast4Character(List<String> newList) {
 		// TODO Auto-generated method stub
-		newList.stream().filter(s -> s.length()>=4).forEach(System.out::println);
+		Predicate<? super String> predicate = s -> s.length()>=4;
+		
+		newList.stream().filter(predicate).forEach(System.out::println);
 	}
 
 	private static void printCourseWhichContainSpring(List<String> newList) {
